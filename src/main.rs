@@ -1,5 +1,11 @@
 fn unique(a: Vec<i32>) -> Vec<i32> {
-    todo!()
+    let mut r = vec![];
+    for x in a {
+        if !r.contains(&x) {
+            r.push(x)
+        }
+    }
+    r
 }
 
 // advanced 1: use generic types
