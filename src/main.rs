@@ -1,5 +1,61 @@
+fn median1(a: Vec<f32>) -> Option<f32> {
+    if a.is_empty() {
+        return None;
+    }
+    let mut s = a.clone();
+    s.sort_by(|a, b| a.partial_cmp(b).unwrap());
+    let len = a.len();
+    let mid = len / 2;
+    if len % 2 == 0 {
+        Some((s[mid - 1] + s[mid]) / 2.0)
+    } else {
+        Some(s[mid])
+    }
+}
+
+fn median2(a: Vec<f32>) -> Option<f32> {
+    if a.is_empty() {
+        return None;
+    }
+    let mut a = a.clone();
+    a.sort_by(|a, b| a.partial_cmp(b).unwrap());
+    let len = a.len();
+    let mid = len / 2;
+    if len % 2 == 0 {
+        Some((a[mid - 1] + a[mid]) / 2.0)
+    } else {
+        Some(a[mid])
+    }
+}
+
+fn median3(a: Vec<f32>) -> Option<f32> {
+    if a.is_empty() {
+        return None;
+    }
+    let mut a = a.clone();
+    a.sort_by(|a, b| a.partial_cmp(b).unwrap());
+    let len = a.len();
+    let mid = len / 2;
+    match len % 2 {
+        0 => Some((a[mid - 1] + a[mid]) / 2.0),
+        1 => Some(a[mid]),
+        _ => unreachable!(),
+    }
+}
+
 fn median(a: Vec<f32>) -> Option<f32> {
-    todo!();
+    if a.is_empty() {
+        return None;
+    }
+    let mut a = a.clone();
+    a.sort_by(|a, b| a.partial_cmp(b).unwrap());
+    let len = a.len();
+    let mid = len / 2;
+    if len % 2 == 0 {
+        Some((a[mid - 1] + a[mid]) / 2.0)
+    } else {
+        Some(a[mid])
+    }
 }
 
 fn main() {
