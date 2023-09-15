@@ -11,7 +11,7 @@
 // advanced 1: use generic types
 fn unique<T>(a: Vec<T>) -> Vec<T>
 where
-    T: Eq,
+    T: Ord,
 {
     let mut r = Vec::<T>::new();
     for x in a {
